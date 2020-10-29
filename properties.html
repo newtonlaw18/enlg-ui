@@ -13,6 +13,10 @@
     <link href="css/enlg.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="img/icon/favicon@4x.png" />
 
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+
     <title>Enlg</title>
 </head>
 
@@ -245,7 +249,7 @@
     </nav>
 
     <div class="container-fluid my-5">
-        <div class="row p-5">
+        <div class="row d-none d-md-flex p-5">
             <div class="col-md-2">
                 <div class="d-none d-md-block">
                     <p><a class="property-link" href="javascript:navToElement('cleansing')">cleansing</a></p>
@@ -331,6 +335,95 @@
                             maintenance.
                         </p>
                     </div>
+                </div>
+            </div>
+        </div>
+        <div class="row d-flex d-md-none">
+            <div class="col-12">
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="property-single property-active" style="width: 100% !important;" id="cleansing">
+                                <img class="img" src="img/icon/enlg_Icon_Cleansing@8x.png" height="175px">
+                                <h4 class="enlg-text">cleansing</h4>
+                                <p class="">
+                                    Removes debris such as
+                                    make-up, dust and
+                                    excess oil built up during
+                                    the day. Pretty self-explanatory.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="property-single property-active" style="width: 100% !important;" id="exfoliating">
+                                <img class="img" src="img/icon/enlg_Icon_Exfoliating@8x.png" height="175px">
+                                <h4 class="enlg-text">exfoliating</h4>
+                                <p class="">
+                                    Helps the shedding of dead skin cells on the outer layer of skin, improving
+                                    complexion.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="property-single property-active" style="width: 100% !important;" id="clarifying">
+                                <img class="img" src="img/icon/enlg_Icon_Clarifying@8x.png" height="175px">
+                                <h4 class="enlg-text">clarifying</h4>
+                                <p class="">
+                                    Reduces the appearance of blemishes such as blackheads, whiteheads, pimples.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="property-single property-active" style="width: 100% !important;" id="brightening">
+                                <img class="img" src="img/icon/enlg_Icon_Brightening@8x.png" height="175px">
+                                <h4 class="enlg-text">brightening</h4>
+                                <p class="">
+                                    Evens natural skin tone and reduces appearance of hyperpigmentation, bringing out
+                                    glowing
+                                    skin.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="property-single property-active" style="width: 100% !important;" id="soothing">
+                                <img class="img" src="img/icon/enlg_Icon_Soothing@8x.png" height="175px">
+                                <h4 class="enlg-text">soothing</h4>
+                                <p class="">
+                                    Reduce signs of skin irritation such as redness, dryness and itchiness.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="property-single property-active" style="width: 100% !important;" id="hydrating">
+                                <img class="img" src="img/icon/enlg_Icon_Hydrating@8x.png" height="175px">
+                                <h4 class="enlg-text">hydrating</h4>
+                                <p class="">
+                                    Provides and retains the moisture levels of your skin, keeping it soft and supple.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="property-single property-active" style="width: 100% !important;" id="protecting">
+                                <img class="img" src="img/icon/enlg_Icon_Protecting@8x.png" height="175px">
+                                <h4 class="enlg-text">protecting</h4>
+                                <p class="">
+                                    Absorb UV radiation and reduce any environmental damage to the skin.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="property-single property-active" style="width: 100% !important;" id="restoring">
+                                <img class="img" src="img/icon/enlg_Icon_Restoring@8x.png" height="175px">
+                                <h4 class="enlg-text">restoring</h4>
+                                <p class="">
+                                    Supports and restores the skin's moisture barrier, providing healthy-looking skin
+                                    maintenance.
+                                </p>
+                            </div>
+                        </div>
+                        ...
+                    </div>
+                    <div class="swiper-pagination"></div>
                 </div>
             </div>
         </div>
@@ -493,8 +586,21 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
     <script>
+        var swiper = new Swiper('.swiper-container', {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            width: 400,
+            loop: true,
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+
         $(document).ready(function () {
             $('.property-single').hover(function () {
                 $(this).addClass('property-active');

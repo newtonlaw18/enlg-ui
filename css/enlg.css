@@ -749,6 +749,9 @@ a.property-link:hover {
   position: relative;
   overflow: hidden;
 }
+.swiper-slide{
+  margin-bottom: 3rem;
+}
 
 @media (min-width: 320px) and (max-width: 480px) {
   .carousel-container {
