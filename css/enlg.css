@@ -545,7 +545,7 @@ video {
 }
 
 .property-single {
-  width: 20vw;
+  width: 20%;
   height: 30rem;
   background: #ededed;
   text-align: center;
@@ -810,5 +810,14 @@ a.property-link:hover {
     color: #fff;
     position: relative;
     overflow: hidden;
-}
+  }
+  .page-header-mini {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    min-height: 80VH;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
 }
