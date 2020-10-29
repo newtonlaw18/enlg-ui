@@ -553,7 +553,7 @@ video {
   -webkit-clip-path: polygon(0 0, 90% 10%, 90% 100%, 0 90%);
   padding-left: 2rem;
   padding-top: 3rem;
-  padding-right: 4rem;
+  padding-right: 5rem;
 }
 
 .property-single.property-active {
@@ -752,6 +752,11 @@ a.property-link:hover {
 }
 .swiper-slide{
   margin-bottom: 3rem;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #0078a5 !important;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
