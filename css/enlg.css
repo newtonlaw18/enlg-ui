@@ -757,6 +757,29 @@ a.property-link:hover {
   position: relative;
   overflow: hidden;
 }
+.carousel-container-landscape {
+  display: flex;
+  align-items: center;
+  min-height: 40rem;
+  max-height: 999px;
+  padding: 0;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.product_img_slideshow_landscape > figure > img {
+  max-width: 100%;
+  min-height: 40rem;
+  /* center align pt. 2 */
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
 .swiper-slide{
   margin-bottom: 3rem;
 }
@@ -766,10 +789,36 @@ a.property-link:hover {
   background: #0078a5 !important;
 }
 
+.nav-link{
+  color: #B2B2B2;
+}
+
+.nav-link:hover{
+  color: #343a40;
+}
+
+.nav-link.active{
+  color: #343a40;
+}
+
 @media (min-width: 320px) and (max-width: 480px) {
   .carousel-container {
     min-height: 30vh;
   }
+  .carousel-container-landscape {
+    min-height: 40vh;
+  }
+  .product_img_slideshow_landscape > figure > img {
+    max-width: 100%;
+    min-height: 40VH;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
+  
   .navbar-nav {
     background: #ededed;
     width: 80%;
