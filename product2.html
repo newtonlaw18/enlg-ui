@@ -211,7 +211,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link px-3" href="#">
+                    <a class="nav-link px-3" href="#" data-toggle="modal" data-target="#myModal2">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18.5 22.55" width="1.125rem">
                             <defs>
                                 <style>
@@ -267,6 +267,7 @@
             <div class="col-md-6 px-0" style="border-right: 1px solid #EDEDED;">
                 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"
                     style="background-color: #fff;">
+
                     <ol class="carousel-indicators mx-0" style="bottom: -1rem !important;">
                         <li data-target="#carouselExampleIndicators" style="background-color: #f18b68;"
                             data-slide-to="0" class="active"></li>
@@ -549,17 +550,26 @@
 
 
 
-    <div class="container-fluid p-0">
-        <div id="anim"></div>
+    <div class="container-fluid">
+        <!-- <div id="anim"></div> -->
+        <div class="row">
+            <div class="col-12">
+                <div class="scroll-bound">
+                    <div class="content">
+                        <canvas id="hero-lightpass" />
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <div class="container-fluid">
+    <!-- <div class="container-fluid">
         <div class="row" style="padding: 10rem 0;">
             <div class="col-12 text-center">
                 <img src="img/feature_1.svg" alt="features" width="70%">
             </div>
         </div>
-    </div>
+    </div> -->
 
     <div class="container-fluid" style="border-top: 1px solid black; border-bottom: 1px solid black;">
         <div class="row px-0 px-md-5 py-5">
@@ -710,7 +720,8 @@
                 <h4 class="tab-pane fade" id="d_sensitive" role="tabpanel" aria-labelledby="h_sensitive">
                     Apply one drop for the whole face. It's normal to experience some light stinging. However, if you're
                     still stinging a lot, rinse off with water immediately.
-                    In that case, use it as a wash-off mask once a week. <br><a href="/talk_to_us.html">Contact us</a>
+                    In that case, use it as a wash-off mask once a week. <br><u><a class="text-dark"
+                            href="/talk_to_us.html">Contact us</a></u>
                     if you have any questions.
                 </h4>
                 <h4 class="tab-pane fade" id="d_new_to_acid">
@@ -807,8 +818,8 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
 
-                <div class="modal-header mx-1 pb-0">
-                    <div class="container" style="padding-bottom: 1.6rem;
+                <div class="modal-header mx-1 pb-0 pt-3" style="position:sticky; top:0; z-index: 999;">
+                    <div class="container" style="padding-top: .625rem; padding-bottom: 5.5rem;
                     border-bottom: 1px solid #b2b2b2;">
                         <div class="row">
                             <div class="col-12">
@@ -1147,6 +1158,53 @@
             autoplay: true,
             path: 'data.json'
         })
+    </script>
+
+    <script>
+        const html = document.documentElement;
+        const canvas = document.getElementById("hero-lightpass");
+        const context = canvas.getContext("2d");
+
+        const frameCount = 191;
+        const currentFrame = index => (
+            `img/animation/product_2/Comp 2_${index.toString().padStart(5, '0')}.jpg`
+        )
+
+        const preloadImages = () => {
+            for (let i = 1; i < frameCount; i++) {
+                const img = new Image();
+                img.src = currentFrame(i);
+            }
+        };
+
+        const img = new Image()
+        img.src = currentFrame(1);
+        canvas.width = 1920;
+        canvas.height = 1080;
+        // canvas.width = img.naturalWidth
+        // canvas.height = img.naturalHeight
+        img.onload = function () {
+            context.drawImage(img, 0, 0);
+        }
+
+        const updateImage = index => {
+            img.src = currentFrame(index);
+            context.drawImage(img, 0, 0);
+        }
+
+        window.addEventListener('scroll', () => {
+            const scrollTop = html.scrollTop;
+            const maxScrollTop = html.scrollHeight - window.innerHeight;
+            const scrollFraction = scrollTop / maxScrollTop;
+            const frameIndex = Math.min(
+                frameCount - 1,
+                Math.ceil(scrollFraction * frameCount)
+            );
+
+            requestAnimationFrame(() => updateImage(frameIndex + 1))
+        });
+
+        preloadImages()
     </script>
 </body>
 

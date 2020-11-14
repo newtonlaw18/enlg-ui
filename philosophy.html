@@ -280,13 +280,13 @@
     </div>
 
     <div class="container-fluid px-5 my-5">
-        <div class="row py-5">
+        <div class="row py-3 py-md-5">
             <div class="col-md-12 text-center">
                 <h4>Why We Exist :</h4>
             </div>
         </div>
         <div class="row py-5 text-center">
-            <div class="col-md-4">
+            <div class="col-md-4 order-2 order-md-1">
                 <h1>to embrace</h1>
                 <p>
                     We strongly believe that true beauty<br>
@@ -294,10 +294,10 @@
                     our imperfections.
                 </p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 order-1 order-md-2">
                 <img src="./img/illustration/philosophy_illustration@3x.png" alt="illustratoin" width="50%">
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 order-3">
                 <h1>
                     to e<span style="font-family: enlg-n;">n</span>rich
                 </h1>
@@ -307,9 +307,7 @@
                     that life is worth living
                 </p>
             </div>
-        </div>
-        <div class="row py-5 text-center">
-            <div class="col-md-12">
+            <div class="col-md-4 order-4 offset-md-4 py-0 py-md-5">
                 <h1>to e<span style="font-family: enlg-n;">n</span>lighte<span style="font-family: enlg-n;">n</span>
                 </h1>
                 <p>
@@ -319,25 +317,68 @@
                 </p>
             </div>
         </div>
+        <div class="row py-5 text-center">
+
+        </div>
     </div>
 
     <div class="container-fluid">
         <div class="row text-center">
-            <div class="col-md-6 philosophy-block philosophy-block-orange">
-                <h4>Redefining our relationship with skincare</h4>
+            <div class="philosophy px-5 col-md-6 philosophy-block philosophy-block-orange">
+                <h4 class="philosophy-header">Redefining our relationship with skincare</h4>
+                <h4 class="philosophy-active">
+                    We have forgotten what actually matters in life. In a world today fuelled by perfectionism and
+                    consumerism, it’s time to seek a new narrative by redefining relationships between ourselves and
+                    others.
+                </h4>
+                <p class="philosophy-active d-block d-md-none">
+                    We have forgotten what actually matters in life. In a world today fuelled by perfectionism and
+                    consumerism, it’s time to seek a new narrative by redefining relationships between ourselves and
+                    others.
+                </p>
             </div>
-            <div class="col-md-6 philosophy-block philosophy-block-blue">
-                <h4>Transparency</h4>
+            <div class="philosophy px-5 col-md-6 philosophy-block philosophy-block-blue">
+                <h4 class="philosophy-header">Transparency</h4>
+                <h4 class="philosophy-active">
+                    We believe our consumers have the right to know the reasons behind everything we do. From the
+                    percentage of actives added in our formulas to why we select certain ingredients over others.
+                    Because everyone deserves to know the truth.
+                </h4>
+                <p class="philosophy-active d-block d-md-none">
+                    We believe our consumers have the right to know the reasons behind everything we do. From the
+                    percentage of actives added in our formulas to why we select certain ingredients over others.
+                    Because everyone deserves to know the truth.
+                </p>
             </div>
         </div>
         <div class="row text-center">
-            <div class="col-md-6 philosophy-block philosophy-block-green">
-                <h4>Sustainability</h4>
+            <div class="philosophy px-5 col-md-6 d-md-flex philosophy-block philosophy-block-green">
+                <h4 class="philosophy-header">Sustainability</h4>
+                <h4 class="philosophy-active">
+                    In times we’re living in, great skincare should cost very minimally to the planet, without
+                    compromising on effectiveness or sustainability. Yet as part of the industry, we still have much to
+                    do in this area and strive towards closing the loop.
+                </h4>
+                <p class="philosophy-active d-block d-md-none">
+                    In times we’re living in, great skincare should cost very minimally to the planet, without
+                    compromising on effectiveness or sustainability. Yet as part of the industry, we still have much to
+                    do in this area and strive towards closing the loop.
+                </p>
             </div>
-            <div class="col-md-6 philosophy-block philosophy-block-grey">
-                <h4>Simplified skincare for
+            <div class="philosophy px-5 col-md-6 philosophy-block philosophy-block-grey">
+                <h4 class="philosophy-header">Simplified skincare for
                     amplified living
                 </h4>
+                <h4 class="philosophy-active">
+                    Our mission is to help you achieve healthy-looking skin with ease. That means simplifying skincare
+                    routines and formulas without compromising on effectiveness. Time is better spent on doing what
+                    matters in life instead of worrying about skincare.
+                </h4>
+                <p class="philosophy-active d-block d-md-none">
+                    Our mission is to help you achieve healthy-looking skin with ease. That means simplifying skincare
+                    routines and formulas without compromising on effectiveness. Time is better spent on doing what
+                    matters in life instead of worrying about skincare.
+                </p>
             </div>
         </div>
     </div>
@@ -553,6 +594,19 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
         integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
         crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('.philosophy-active').css("display","none")
+            $('.philosophy').hover(function () {
+                $(this).children('.philosophy-active').css("display", "block")
+                $(this).children('.philosophy-header').css("display", "none")
+            },
+            function () {
+                $(this).children('.philosophy-active').css("display", "none")
+                $(this).children('.philosophy-header').css("display", "block")
+            });
+        });
+    </script>
 </body>
 
 </html>
